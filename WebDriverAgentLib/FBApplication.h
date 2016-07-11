@@ -7,7 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import <WebDriverAgentLib/XCUIApplication.h>
+#import "XCUIApplication.h"
 
 @interface FBApplication : XCUIApplication
 

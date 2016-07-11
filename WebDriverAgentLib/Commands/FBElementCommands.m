@@ -57,7 +57,9 @@
     [[FBRoute POST:@"/uiaElement/:uuid/doubleTap"] respondWithTarget:self action:@selector(handleDoubleTap:)],
     [[FBRoute POST:@"/uiaElement/:uuid/touchAndHold"] respondWithTarget:self action:@selector(handleTouchAndHold:)],
     [[FBRoute POST:@"/uiaElement/:uuid/scroll"] respondWithTarget:self action:@selector(handleScroll:)],
+#if TARGET_OS_IPHONE
     [[FBRoute POST:@"/uiaElement/:uuid/value"] respondWithTarget:self action:@selector(handleGetUIAElementValue:)],
+#endif
     [[FBRoute POST:@"/uiaTarget/:uuid/dragfromtoforduration"] respondWithTarget:self action:@selector(handleDrag:)],
     [[FBRoute POST:@"/tap/:uuid"] respondWithTarget:self action:@selector(handleTap:)],
     [[FBRoute POST:@"/keys"] respondWithTarget:self action:@selector(handleKeys:)],
@@ -205,7 +207,11 @@
 {
   FBElementCache *elementCache = request.session.elementCache;
   XCUIElement *element = [elementCache elementForUUID:request.parameters[@"uuid"]];
-  [element doubleTap];
+#if TARGET_OS_IPHONE
+    [element doubleTap];
+#else
+    [element doubleClick];
+#endif
   return FBResponseWithOK();
 }
 
@@ -213,7 +219,11 @@
 {
   FBElementCache *elementCache = request.session.elementCache;
   XCUIElement *element = [elementCache elementForUUID:request.parameters[@"uuid"]];
-  [element pressForDuration:[request.arguments[@"duration"] doubleValue]];
+#if TARGET_OS_IPHONE
+    [element pressForDuration:[request.arguments[@"duration"] doubleValue]];
+#else
+    [element click];
+#endif
   return FBResponseWithOK();
 }
 
@@ -258,6 +268,7 @@
   return FBResponseWithErrorFormat(@"Unsupported scroll type");
 }
 
+#if TARGET_OS_IPHONE
 + (id<FBResponsePayload>)handleGetUIAElementValue:(FBRouteRequest *)request
 {
     FBElementCache *elementCache = request.session.elementCache;
@@ -272,6 +283,7 @@
     [element adjustToPickerWheelValue:wheelPickerValue];
     return FBResponseWithOK();
 }
+#endif
 
 + (id<FBResponsePayload>)handleDrag:(FBRouteRequest *)request
 {
@@ -282,7 +294,11 @@
   XCUICoordinate *appCoordinate = [[XCUICoordinate alloc] initWithElement:session.application normalizedOffset:CGVectorMake(0, 0)];
   XCUICoordinate *endCoordinate = [[XCUICoordinate alloc] initWithCoordinate:appCoordinate pointsOffset:endPoint];
   XCUICoordinate *startCoordinate = [[XCUICoordinate alloc] initWithCoordinate:appCoordinate pointsOffset:startPoint];
+#if TARGET_OS_IPHONE
   [startCoordinate pressForDuration:duration thenDragToCoordinate:endCoordinate];
+#else
+    [startCoordinate clickForDuration:duration thenDragToCoordinate:endCoordinate];
+#endif
   return FBResponseWithOK();
 }
 
@@ -300,7 +316,11 @@
   }
   XCUICoordinate *appCoordinate = [[XCUICoordinate alloc] initWithElement:session.application normalizedOffset:CGVectorMake(0, 0)];
   XCUICoordinate *tapCoordinate = [[XCUICoordinate alloc] initWithCoordinate:appCoordinate pointsOffset:CGVectorMake(x, y)];
+#if TARGET_OS_IPHONE
   [tapCoordinate tap];
+#else
+  [tapCoordinate click];
+#endif
   return FBResponseWithOK();
 }
 

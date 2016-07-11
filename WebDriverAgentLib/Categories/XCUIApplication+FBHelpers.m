@@ -19,6 +19,7 @@
 
 @implementation XCUIApplication (FBHelpers)
 
+#if TARGET_OS_IPHONE
 - (BOOL)fb_deactivateWithDuration:(NSTimeInterval)duration error:(NSError **)error
 {
   NSString *applicationIdentifier = self.label;
@@ -29,6 +30,7 @@
   }
   return YES;
 }
+#endif
 
 - (XCElementSnapshot *)fb_mainWindowSnapshot
 {
@@ -58,7 +60,11 @@
   info[@"value"] = FBValueOrNull(snapshot.wdValue);
   info[@"label"] = FBValueOrNull(snapshot.wdLabel);
   info[@"rect"] = snapshot.wdRect;
+#if TARGET_OS_IPHONE
   info[@"frame"] = NSStringFromCGRect(snapshot.wdFrame);
+#else
+  info[@"frame"] =  NSStringFromRect(snapshot.wdFrame);
+#endif
   info[@"isEnabled"] = [@([snapshot isWDEnabled]) stringValue];
   info[@"isVisible"] = [@([snapshot isWDVisible]) stringValue];
 

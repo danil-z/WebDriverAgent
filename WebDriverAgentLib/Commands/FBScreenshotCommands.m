@@ -19,18 +19,22 @@
 {
   return
   @[
+#if TARGET_OS_IPHONE
     [[FBRoute GET:@"/screenshot"].withoutSession respondWithTarget:self action:@selector(handleGetScreenshot:)],
     [[FBRoute GET:@"/screenshot"] respondWithTarget:self action:@selector(handleGetScreenshot:)],
-  ];
+#endif
+    ];
 }
 
 
 #pragma mark - Commands
 
+#if TARGET_OS_IPHONE
 + (id<FBResponsePayload>)handleGetScreenshot:(FBRouteRequest *)request
 {
   NSString *screenshot = [[XCUIDevice sharedDevice].fb_screenshot base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
   return FBResponseWithObject(screenshot);
 }
+#endif
 
 @end

@@ -13,7 +13,9 @@
     unsigned long long _index;
     long long _interfaceOrientation;
 }
+#if TARGET_OS_IPHONE
 @property(readonly) UIInterfaceOrientation interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
+#endif
 @property unsigned long long index; // @synthesize index=_index;
 @property BOOL immutable; // @synthesize immutable=_immutable;
 @property(readonly) BOOL complete;

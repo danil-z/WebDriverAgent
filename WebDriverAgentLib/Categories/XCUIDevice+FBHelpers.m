@@ -9,6 +9,8 @@
 
 #import "XCUIDevice+FBHelpers.h"
 
+#if TARGET_OS_IPHONE
+
 #import <arpa/inet.h>
 #import <ifaddrs.h>
 #include <notify.h>
@@ -82,3 +84,5 @@ static const NSTimeInterval FBHomeButtonCoolOffTime = 1.;
 }
 
 @end
+
+#endif

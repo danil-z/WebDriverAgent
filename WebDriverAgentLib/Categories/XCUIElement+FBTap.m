@@ -23,7 +23,11 @@
   [self fb_waitUntilFrameIsStable];
   __block BOOL didSucceed;
   [FBRunLoopSpinner spinUntilCompletion:^(void(^completion)()){
+#if TARGET_OS_IPHONE
     [[XCEventGenerator sharedGenerator] tapAtPoint:self.lastSnapshot.hitPoint orientation:self.interfaceOrientation handler:^(XCSynthesizedEventRecord *record, NSError *commandError) {
+#else
+    [[XCEventGenerator sharedGenerator] clickAtPoint:self.lastSnapshot.hitPoint handler:^(XCSynthesizedEventRecord *record, NSError *commandError) {
+#endif
       if (commandError) {
         [FBLogger logFmt:@"Failed to perform tap: %@", commandError];
       }

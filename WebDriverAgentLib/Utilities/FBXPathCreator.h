@@ -8,8 +8,8 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <XCTest/XCUIElementTypes.h>
-
+//#import <XCTest/XCUIElementTypes.h>
+#import <XCTest/XCTest.h>
 /**
  Helper class used to create xpath string
  */

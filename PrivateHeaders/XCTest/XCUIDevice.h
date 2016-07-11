@@ -5,7 +5,7 @@
 //
 
 #import <XCTest/XCUIDevice.h>
-
+#if TARGET_OS_IPHONE
 @interface XCUIDevice ()
 
 - (void)pressLockButton;
@@ -14,3 +14,4 @@
 - (void)_dispatchEventWithPage:(unsigned int)arg1 usage:(unsigned int)arg2 duration:(double)arg3;
 
 @end
+#endif

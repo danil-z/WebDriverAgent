@@ -16,7 +16,9 @@
 #import "FBFindElementCommands.h"
 #import "FBSpringboardApplication.h"
 #import "FBLogger.h"
+#if TARGET_OS_IPHONE
 #import "XCAXClient_iOS.h"
+#endif
 #import "XCElementSnapshot+Helpers.h"
 #import "XCElementSnapshot-Hitpoint.h"
 #import "XCElementSnapshot.h"

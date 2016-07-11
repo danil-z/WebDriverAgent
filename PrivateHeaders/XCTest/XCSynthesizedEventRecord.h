@@ -12,7 +12,9 @@
     NSString *_name;
     long long _interfaceOrientation;
 }
+#if TARGET_OS_IPHONE
 @property(readonly) UIInterfaceOrientation interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
+#endif
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) double maximumOffset;
 @property(readonly) NSArray *eventPaths;

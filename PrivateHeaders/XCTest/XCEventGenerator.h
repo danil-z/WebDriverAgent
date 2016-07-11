@@ -6,7 +6,11 @@
 
 #import <TargetConditionals.h>
 
+#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+#elif TARGET_OS_MAC
+#import <Cocoa/Cocoa.h>
+#endif
 
 #import <WebDriverAgentLib/CDStructures.h>
 
@@ -47,7 +51,7 @@ typedef void (^XCEventGeneratorHandler)(XCSynthesizedEventRecord *record, NSErro
 - (double)clickAndDragFromPoint:(CGPoint)arg1 toPoint:(CGPoint)arg2 handler:(CDUnknownBlockType)arg3;
 - (double)rightClickAtPoint:(CGPoint)arg1 handler:(CDUnknownBlockType)arg2;
 - (double)doubleClickAtPoint:(CGPoint)arg1 handler:(CDUnknownBlockType)arg2;
-- (double)clickAtPoint:(CGPoint)arg1 handler:(CDUnknownBlockType)arg2;
+- (double)clickAtPoint:(CGPoint)arg1 handler:(XCEventGeneratorHandler)arg2;
 - (double)hoverAtPoint:(CGPoint)arg1 handler:(CDUnknownBlockType)arg2;
 - (CGPoint)_currentMousePosition;
 - (void)_clickMouseButton:(unsigned int)arg1 withCount:(unsigned long long)arg2 atPoint:(CGPoint)arg3 handleCompletion:(CDUnknownBlockType)arg4;

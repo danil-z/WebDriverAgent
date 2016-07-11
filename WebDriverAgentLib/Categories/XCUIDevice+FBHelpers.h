@@ -9,6 +9,8 @@
 
 #import <XCTest/XCTest.h>
 
+#if TARGET_OS_IPHONE
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XCUIDevice (FBHelpers)
@@ -42,3 +44,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

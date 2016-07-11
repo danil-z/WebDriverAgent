@@ -68,6 +68,7 @@ static FBSession *_activeSession;
 - (FBApplication *)application
 {
   FBApplication *application = self.testedApplication;
+#if TARGET_OS_IPHONE
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K != %d", FBStringify(XCAccessibilityElement, processIdentifier), self.testedApplication.processID];
   XCAccessibilityElement *anotherActiveApplication = [[[[XCAXClient_iOS sharedClient] activeApplications] filteredArrayUsingPredicate:predicate] firstObject];
   if (anotherActiveApplication) {
@@ -77,6 +78,7 @@ static FBSession *_activeSession;
   else if (!application.running) {
     [[NSException exceptionWithName:FBApplicationCrashedException reason:@"Application is not running, possibly crashed" userInfo:nil] raise];
   }
+#endif
   [application query];
   [application resolve];
   return application;

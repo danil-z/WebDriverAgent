@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XCUIApplication (FBHelpers)
-
+#if TARGET_OS_IPHONE
 /**
  Deactivates application for given time
 
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return YES if the operation succeeds, otherwise NO.
  */
 - (BOOL)fb_deactivateWithDuration:(NSTimeInterval)duration error:(NSError **)error;
-
+#endif
 /**
  Returns snapshot element of main window
  */

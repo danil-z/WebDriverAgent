@@ -9,7 +9,11 @@
 
 #import "FBConfiguration.h"
 
+#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+#else
+#import <Cocoa/Cocoa.h>
+#endif
 
 BOOL _AXSAutomationSetFauxCollectionViewCellsEnabled(BOOL);
 
@@ -22,7 +26,9 @@ static NSUInteger const DefaultPortRange = 100;
 
 + (void)shouldShowFakeCollectionViewCells:(BOOL)showFakeCells
 {
+    #if TARGET_OS_IPHONE
   _AXSAutomationSetFauxCollectionViewCellsEnabled(showFakeCells);
+    #endif
 }
 
 + (NSRange)bindingPortRange

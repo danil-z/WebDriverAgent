@@ -31,7 +31,11 @@
 @property BOOL ancillary; // @synthesize ancillary=_ancillary;
 @property(nonatomic) BOOL accessibilityActive; // @synthesize accessibilityActive=_accessibilityActive;
 @property(readonly) XCUIElement *keyboard; // @synthesize keyboard=_keyboard;
+
+#if TARGET_OS_IPHONE
 @property(readonly, nonatomic) UIInterfaceOrientation interfaceOrientation; //TODO tvos
+#endif
+
 @property(readonly, nonatomic) BOOL running;
 @property(nonatomic) int processID; // @synthesize processID=_processID;
 @property unsigned long long state; // @synthesize state=_state;

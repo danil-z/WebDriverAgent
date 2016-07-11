@@ -9,8 +9,10 @@
 
 #import <Foundation/Foundation.h>
 
+#if TARGET_OS_IPHONE
 #import <WebDriverAgentLib/FBCommandHandler.h>
 
 @interface FBOrientationCommands : NSObject <FBCommandHandler>
 
 @end
+#endif

@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <WebDriverAgentLib/FBCommandHandler.h>
+#import "FBCommandHandler.h"
 
 @interface FBElementCommands : NSObject <FBCommandHandler>
 

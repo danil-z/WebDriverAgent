@@ -169,6 +169,7 @@ const CGFloat FBScrollCoolOffTime = 1.f;
 
 @end
 
+#if TARGET_OS_IPHONE
 
 @implementation XCElementSnapshot (FBScrolling)
 
@@ -273,3 +274,4 @@ const CGFloat FBScrollCoolOffTime = 1.f;
 }
 
 @end
+#endif

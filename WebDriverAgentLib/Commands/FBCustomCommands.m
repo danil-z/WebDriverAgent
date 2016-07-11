@@ -29,8 +29,10 @@
 {
   return
   @[
+#if TARGET_OS_IPHONE
     [[FBRoute POST:@"/homescreen"].withoutSession respondWithTarget:self action:@selector(handleHomescreenCommand:)],
     [[FBRoute POST:@"/deactivateApp"] respondWithTarget:self action:@selector(handleDeactivateAppCommand:)],
+#endif
     [[FBRoute POST:@"/timeouts"] respondWithTarget:self action:@selector(handleTimeouts:)],
   ];
 }
@@ -38,6 +40,7 @@
 
 #pragma mark - Commands
 
+#if TARGET_OS_IPHONE
 + (id<FBResponsePayload>)handleHomescreenCommand:(FBRouteRequest *)request
 {
   NSError *error;
@@ -57,6 +60,7 @@
   }
   return FBResponseWithOK();
 }
+#endif
 
 + (id<FBResponsePayload>)handleTimeouts:(FBRouteRequest *)request
 {

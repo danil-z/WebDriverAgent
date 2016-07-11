@@ -9,6 +9,8 @@
 
 #import "FBOrientationCommands.h"
 
+#if TARGET_OS_IPHONE
+
 #import "FBRouteRequest.h"
 #import "FBMacros.h"
 #import "FBSession.h"
@@ -113,3 +115,6 @@ const NSTimeInterval kFBWebDriverOrientationChangeDelay = 5.0;
 }
 
 @end
+
+#endif
+

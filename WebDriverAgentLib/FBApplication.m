@@ -23,6 +23,7 @@
 
 + (instancetype)fb_activeApplication
 {
+#if TARGET_OS_IPHONE
   XCAccessibilityElement *activeApplicationElement = [[[XCAXClient_iOS sharedClient] activeApplications] firstObject];
   if (!activeApplicationElement) {
     return nil;
@@ -31,6 +32,10 @@
   [application query];
   [application resolve];
   return application;
+#else
+    //todo fix it
+    return nil;
+#endif
 }
 
 - (void)launch

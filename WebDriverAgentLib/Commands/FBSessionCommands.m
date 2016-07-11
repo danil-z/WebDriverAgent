@@ -57,20 +57,29 @@
 
 + (id<FBResponsePayload>)handleGetStatus:(FBRouteRequest *)request
 {
-  return
+#if TARGET_OS_IPHONE
+    NSString *name = [[UIDevice currentDevice] systemName];
+    NSString *version = [[UIDevice currentDevice] systemVersion];
+#else
+    NSString *name = [[NSProcessInfo processInfo] operatingSystemVersionString];
+    NSString *version = [[NSProcessInfo processInfo] operatingSystemVersionString];
+#endif
+    return
   FBResponseWithStatus(
     FBCommandStatusNoError,
     @{
       @"state" : @"success",
       @"os" :
         @{
-          @"name" : [[UIDevice currentDevice] systemName],
-          @"version" : [[UIDevice currentDevice] systemVersion],
+          @"name" : name,
+          @"version" : version,
         },
+#if TARGET_OS_IPHONE
       @"ios" :
         @{
           @"simulatorVersion" : [[UIDevice currentDevice] systemVersion],
         },
+#endif
       @"build" :
         @{
           @"time" : [self.class buildTimestamp],
@@ -108,10 +117,17 @@
 + (NSDictionary *)currentCapabilities
 {
   FBApplication *application = [FBSession activeSession].application;
+#if TARGET_OS_IPHONE
+    NSString *name = [[UIDevice currentDevice] systemName];
+    NSString *device = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) ? @"ipad" : @"iphone";
+#else
+    NSString *name = [[NSProcessInfo processInfo] operatingSystemVersionString];
+    NSString *device = @"macOS";
+#endif
   return
   @{
-    @"device": ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) ? @"ipad" : @"iphone",
-    @"sdkVersion": [[UIDevice currentDevice] systemVersion],
+    @"device": device,
+    @"sdkVersion": name,
     @"browserName": application.label ?: [NSNull null],
     @"CFBundleIdentifier": application.bundleID ?: [NSNull null],
   };
