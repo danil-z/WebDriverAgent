@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		83A0CBD41D340F1200B03514 /* WebDriverAgentLibOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 83A0CBD31D340F1200B03514 /* WebDriverAgentLibOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83A0CBDB1D340F1200B03514 /* WebDriverAgentLibOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A0CBD11D340F1200B03514 /* WebDriverAgentLibOSX.framework */; };
-		83A0CBE01D340F1200B03514 /* WebDriverAgentLibOSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A0CBDF1D340F1200B03514 /* WebDriverAgentLibOSXTests.m */; };
 		83A0CBE81D340FAA00B03514 /* WebDriverAgentLib.h in Headers */ = {isa = PBXBuildFile; fileRef = EE158B5E1CBD47A000A3E3F0 /* WebDriverAgentLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83A0CBE91D340FAA00B03514 /* FBAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6C26921CF2379700F8B5FF /* FBAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83A0CBEA1D340FAA00B03514 /* FBAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C26931CF2379700F8B5FF /* FBAlert.m */; };
@@ -207,6 +205,9 @@
 		83A0CCAC1D34131500B03514 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A0CCAA1D34131500B03514 /* KissXML.framework */; };
 		83A0CCAD1D34131500B03514 /* RoutingHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A0CCAB1D34131500B03514 /* RoutingHTTPServer.framework */; };
 		83A0CCAE1D34309500B03514 /* WebDriverAgent.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EEDBEBBA1CB2681900A790A2 /* WebDriverAgent.bundle */; };
+		83A0CCB61D345C5800B03514 /* WebDriverAgentLibOSXRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A0CCB51D345C5800B03514 /* WebDriverAgentLibOSXRunner.m */; };
+		83A0CCBD1D346AAE00B03514 /* WebDriverAgentLibOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A0CBD11D340F1200B03514 /* WebDriverAgentLibOSX.framework */; };
+		83A0CCBF1D346AD100B03514 /* WebDriverAgentLibOSX.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83A0CBD11D340F1200B03514 /* WebDriverAgentLibOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD35D01A1CF1418E00870A75 /* RoutingHTTPServer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD35D01C1CF141A600870A75 /* KissXML.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD271CF120B000806E5D /* KissXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD35D0631CF1C2C200870A75 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD271CF120B000806E5D /* KissXML.framework */; };
@@ -465,7 +466,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		83A0CBDC1D340F1200B03514 /* PBXContainerItemProxy */ = {
+		83A0CCBB1D346A9A00B03514 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 91F9DAE11B99DBC2001349B2 /* Project object */;
 			proxyType = 1;
@@ -496,6 +497,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		83A0CCBE1D346ABE00B03514 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				83A0CCBF1D346AD100B03514 /* WebDriverAgentLibOSX.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE93CFF41CCA501300708122 /* Copy frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -526,11 +538,13 @@
 		83A0CBD11D340F1200B03514 /* WebDriverAgentLibOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebDriverAgentLibOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A0CBD31D340F1200B03514 /* WebDriverAgentLibOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebDriverAgentLibOSX.h; sourceTree = "<group>"; };
 		83A0CBD51D340F1200B03514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83A0CBDA1D340F1200B03514 /* WebDriverAgentLibOSXRunner.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebDriverAgentLibOSXRunner.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A0CBDF1D340F1200B03514 /* WebDriverAgentLibOSXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDriverAgentLibOSXTests.m; sourceTree = "<group>"; };
 		83A0CBE11D340F1200B03514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83A0CCAA1D34131500B03514 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/Mac/KissXML.framework; sourceTree = "<group>"; };
 		83A0CCAB1D34131500B03514 /* RoutingHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutingHTTPServer.framework; path = Carthage/Build/Mac/RoutingHTTPServer.framework; sourceTree = "<group>"; };
+		83A0CCB31D345C5800B03514 /* WebDriverAgentLibOSXRunner.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebDriverAgentLibOSXRunner.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83A0CCB51D345C5800B03514 /* WebDriverAgentLibOSXRunner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDriverAgentLibOSXRunner.m; sourceTree = "<group>"; };
+		83A0CCB71D345C5800B03514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD35D0291CF1B39E00870A75 /* generate_modules.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_modules.sh; sourceTree = "<group>"; };
 		AD35D0651CF1C2CE00870A75 /* Peertalk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peertalk.framework; path = Carthage/Build/iOS/Peertalk.framework; sourceTree = "<group>"; };
 		AD35D0691CF1C30700870A75 /* Peertalk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peertalk.framework; path = Carthage/Build/Mac/Peertalk.framework; sourceTree = "<group>"; };
@@ -800,11 +814,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83A0CBD71D340F1200B03514 /* Frameworks */ = {
+		83A0CCB01D345C5800B03514 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83A0CBDB1D340F1200B03514 /* WebDriverAgentLibOSX.framework in Frameworks */,
+				83A0CCBD1D346AAE00B03514 /* WebDriverAgentLibOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -886,6 +900,15 @@
 			path = WebDriverAgentLibOSXTests;
 			sourceTree = "<group>";
 		};
+		83A0CCB41D345C5800B03514 /* WebDriverAgentLibOSXRunner */ = {
+			isa = PBXGroup;
+			children = (
+				83A0CCB51D345C5800B03514 /* WebDriverAgentLibOSXRunner.m */,
+				83A0CCB71D345C5800B03514 /* Info.plist */,
+			);
+			path = WebDriverAgentLibOSXRunner;
+			sourceTree = "<group>";
+		};
 		91F9DAE01B99DBC2001349B2 = {
 			isa = PBXGroup;
 			children = (
@@ -899,6 +922,7 @@
 				EE9AB8021CAEE182008C271F /* Scripts */,
 				83A0CBD21D340F1200B03514 /* WebDriverAgentLibOSX */,
 				83A0CBDE1D340F1200B03514 /* WebDriverAgentLibOSXTests */,
+				83A0CCB41D345C5800B03514 /* WebDriverAgentLibOSXRunner */,
 				91F9DAEA1B99DBC2001349B2 /* Products */,
 				B6E83A410C45944B036B6B0F /* Frameworks */,
 				AD42DD291CF121E600806E5D /* Modules */,
@@ -915,7 +939,7 @@
 				EE9B75D41CF7956C00275851 /* IntegrationApp.app */,
 				EE9B75EC1CF7956C00275851 /* IntegrationTests.xctest */,
 				83A0CBD11D340F1200B03514 /* WebDriverAgentLibOSX.framework */,
-				83A0CBDA1D340F1200B03514 /* WebDriverAgentLibOSXRunner.xctest */,
+				83A0CCB31D345C5800B03514 /* WebDriverAgentLibOSXRunner.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1692,23 +1716,24 @@
 			productReference = 83A0CBD11D340F1200B03514 /* WebDriverAgentLibOSX.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		83A0CBD91D340F1200B03514 /* WebDriverAgentLibOSXRunner */ = {
+		83A0CCB21D345C5800B03514 /* WebDriverAgentLibOSXRunner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83A0CBE71D340F1200B03514 /* Build configuration list for PBXNativeTarget "WebDriverAgentLibOSXRunner" */;
+			buildConfigurationList = 83A0CCB81D345C5800B03514 /* Build configuration list for PBXNativeTarget "WebDriverAgentLibOSXRunner" */;
 			buildPhases = (
-				83A0CBD61D340F1200B03514 /* Sources */,
-				83A0CBD71D340F1200B03514 /* Frameworks */,
-				83A0CBD81D340F1200B03514 /* Resources */,
+				83A0CCAF1D345C5800B03514 /* Sources */,
+				83A0CCB01D345C5800B03514 /* Frameworks */,
+				83A0CCB11D345C5800B03514 /* Resources */,
+				83A0CCBE1D346ABE00B03514 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				83A0CBDD1D340F1200B03514 /* PBXTargetDependency */,
+				83A0CCBC1D346A9A00B03514 /* PBXTargetDependency */,
 			);
 			name = WebDriverAgentLibOSXRunner;
-			productName = WebDriverAgentLibOSXTests;
-			productReference = 83A0CBDA1D340F1200B03514 /* WebDriverAgentLibOSXRunner.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			productName = WebDriverAgentLibOSXRunner;
+			productReference = 83A0CCB31D345C5800B03514 /* WebDriverAgentLibOSXRunner.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		EE158A981CBD452B00A3E3F0 /* WebDriverAgentLib */ = {
 			isa = PBXNativeTarget;
@@ -1832,7 +1857,7 @@
 					83A0CBD01D340F1200B03514 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					83A0CBD91D340F1200B03514 = {
+					83A0CCB21D345C5800B03514 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					EE158A981CBD452B00A3E3F0 = {
@@ -1877,7 +1902,7 @@
 				EE9B75EB1CF7956C00275851 /* IntegrationTests */,
 				EE9B75D31CF7956C00275851 /* IntegrationApp */,
 				83A0CBD01D340F1200B03514 /* WebDriverAgentLibOSX */,
-				83A0CBD91D340F1200B03514 /* WebDriverAgentLibOSXRunner */,
+				83A0CCB21D345C5800B03514 /* WebDriverAgentLibOSXRunner */,
 			);
 		};
 /* End PBXProject section */
@@ -1891,7 +1916,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83A0CBD81D340F1200B03514 /* Resources */ = {
+		83A0CCB11D345C5800B03514 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2009,11 +2034,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83A0CBD61D340F1200B03514 /* Sources */ = {
+		83A0CCAF1D345C5800B03514 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83A0CBE01D340F1200B03514 /* WebDriverAgentLibOSXTests.m in Sources */,
+				83A0CCB61D345C5800B03514 /* WebDriverAgentLibOSXRunner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2157,10 +2182,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		83A0CBDD1D340F1200B03514 /* PBXTargetDependency */ = {
+		83A0CCBC1D346A9A00B03514 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 83A0CBD01D340F1200B03514 /* WebDriverAgentLibOSX */;
-			targetProxy = 83A0CBDC1D340F1200B03514 /* PBXContainerItemProxy */;
+			targetProxy = 83A0CCBB1D346A9A00B03514 /* PBXContainerItemProxy */;
 		};
 		EE158B5C1CBD462500A3E3F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2254,33 +2279,33 @@
 			};
 			name = Release;
 		};
-		83A0CBE41D340F1200B03514 /* Debug */ = {
+		83A0CCB91D345C5800B03514 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = WebDriverAgentLibOSXTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				INFOPLIST_FILE = WebDriverAgentLibOSXRunner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.WebDriverAgentLibOSXTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.WebDriverAgentLibOSXRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USES_XCTRUNNER = YES;
 			};
 			name = Debug;
 		};
-		83A0CBE51D340F1200B03514 /* Release */ = {
+		83A0CCBA1D345C5800B03514 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = WebDriverAgentLibOSXTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				INFOPLIST_FILE = WebDriverAgentLibOSXRunner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.WebDriverAgentLibOSXTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.WebDriverAgentLibOSXRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USES_XCTRUNNER = YES;
@@ -2614,11 +2639,11 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		83A0CBE71D340F1200B03514 /* Build configuration list for PBXNativeTarget "WebDriverAgentLibOSXRunner" */ = {
+		83A0CCB81D345C5800B03514 /* Build configuration list for PBXNativeTarget "WebDriverAgentLibOSXRunner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				83A0CBE41D340F1200B03514 /* Debug */,
-				83A0CBE51D340F1200B03514 /* Release */,
+				83A0CCB91D345C5800B03514 /* Debug */,
+				83A0CCBA1D345C5800B03514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

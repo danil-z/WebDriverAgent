@@ -40,3 +40,5 @@ Resources/WebDriverAgent.bundle
 # Modules map recreated on each build
 Modules/module.modulemap
 
+.DS_Store
+Carthage/
